@@ -91,7 +91,7 @@ recoginize the right container by the `IMAGE` name. It contains the name you
 assigned to your fork on Github. Assign the container a meaningful name in the
 shell of your host machine in analogy to my example:
 
-```bash
+```sh
 docker rename blissful_gagarin ha.tutorial
 ```
 
@@ -99,14 +99,15 @@ docker rename blissful_gagarin ha.tutorial
 
 Follow the instructions to start Home Assistant. Open the command palette of *VS
 Code*. Select `Tasks: Run Task`. Select `Run Home Assistant Core`. Follow along
-in the terminal window, if everything goes well.
+in the terminal window, to check if everything goes well.
+
+![deprecation warnig](img/deprecation-waring.png)
 
 You can ignore a warning regarding the version of Python. Home Assistant wants
 to support older versions to a certain extend. When time has come, the core team
 will update the container.
 
-![deprecation warnig](img/deprecation-waring.png)
-
-Go ahead to the port `8123` of your local machine to set up an account for the admin. The typical URL is `http://localhost:8123`.
+Go ahead to port `8123` of your local machine to set up an account for the
+admin. The typical URL is [localhost:8123](http://localhost:8123).
 
 ### Mounting
