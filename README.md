@@ -88,16 +88,16 @@ at the bottom of *VS Code* to follow along the process of the installation.
 In the dashboard of the *Docker Desktop* you can observe, how a bootstrapping
 container is setting up the development container. 
 
-_WARNING_: Please notice how the list of `known_hosts` is copied from `~/.ssh/`
+_NOTE_: Please notice how the list of `known_hosts` is copied from `~/.ssh/`
 of the local machine into the container. Be aware of this privacy issue before
 sharing the container.
 
 ![bootstrapping](img/bootstrapping.png)
 
-It gets a crazy `NAME` assigned. In my case it is `blissful_gagarin`. You
-recoginize the right container by the `IMAGE` name. It contains the name you
-assigned to your fork on Github. Assign the container a meaningful name in the
-shell of your host machine in analogy to my example:
+It gets a silly `NAME` assigned. In my case it is `blissful_gagarin`. You
+recoginize the container by the name of the `IMAGE`. It contains the name, which
+you assigned to your fork on Github (here `ha.core2`). In the shell of your host
+machine assign a meaningful name.
 
 ```sh
 docker rename blissful_gagarin ha.tutorial
@@ -107,7 +107,7 @@ docker rename blissful_gagarin ha.tutorial
 
 Follow the instructions to start Home Assistant. Open the command palette of *VS
 Code*. Select `Tasks: Run Task`. Select `Run Home Assistant Core`. Follow along
-in the terminal window, to check if everything goes well.
+the start up log in the terminal window, to check if everything goes well.
 
 ![deprecation warnig](img/deprecation-waring.png)
 
@@ -142,11 +142,15 @@ Among a lot of other stuff, you find the local `.git/` repository and the
 `.gitignore` file. You find the configuration directory of *VS Code* `.vscode`.
 There is the `config/` directory for the customization of Home Assistant.
 
-Explore `.gitignore`. You also find it within the file explorer of *VS Code* on
-the left hand side. Type `head .gitignore`. The most important line for us is
-the first one `/config`. You observe the configuration directory is ignored by
-this repository. Your can freely place your own git repositories into it without
-having to fear any conflicts.
+Explore `.gitignore`. Type `head .gitignore`. You also find it within the file
+explorer of *VS Code* on the left hand side.
+
+![head of .gitignore](img/head-gitignore.png)
+
+The most important line for us is the first one containing `/config`. You
+observe, that the configuration directory is ignored by this repository. Your
+can freely place your own git repositories into it without having to fear any
+conflicts.
 
 ### Mounting
 
