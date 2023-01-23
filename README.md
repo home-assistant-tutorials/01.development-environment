@@ -60,7 +60,9 @@ without a fundamental background.
 ### Github account
 
 You should have registerd for a Github account to be able to fork your own
-instances of differnt parts of the tutorial.
+instances of differnt parts of the tutorial. You should have registered your
+local machine for your Github account, to easily push and pull from the command
+line.
 
 ### JavaScript
 
@@ -152,6 +154,16 @@ observe, that the configuration directory is ignored by this repository. Your
 can freely place your own git repositories into it without having to fear any
 conflicts.
 
+### Restarting the Container
+
+When closing the remote connection the shutdown of the container is triggered
+automatically. The remote connections also gets close when quitting VS Code.
+
+To restart VS Code inside the container the shortcut is to select it from
+`File > Open Recent` in the menu. The regular approach is the command
+`Remote Explorer: Focus on Containers View`, right click on the container and
+select `Open Folder in Container`.
+
 ### Mounting
 
 It is not necessary to mount your projects into the development container, but
@@ -164,4 +176,4 @@ your desktop.
 You may consider to mount the full `config/` directory. As you have already
 observed, it is not empty. If you want to mount it you have to take care to copy
 the files back into it. I choose a different approach for this tutorial and show
-the mounting in a more fine-grained style.
+the mounting on a more fine-grained level.
