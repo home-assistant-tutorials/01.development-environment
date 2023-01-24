@@ -1,9 +1,9 @@
-# Tutorial 01 - Home Assistant - The Develoment Environment
+# Tutorial 01 - Home Assistant - The Development Environment
 
 * @published: January 2023
 * @author: Elmar Hinz
 
-This repository is the first one of a series of tutorials addressing differnt
+This repository is the first one of a series of tutorials addressing different
 parts of the development with Home Assistant seen with the eye of the skilled
 user. Each tutorial is shipped as a standalone github repository holding the
 code alongside with the README (if any).
@@ -26,11 +26,11 @@ be able reuse this container for most of the future tutorials.
 
 ### Machine and Operating System
 
-A contemporary machine being able to run *Docker* conatainers and *Visual Studio
+A contemporary machine being able to run *Docker* containers and *Visual Studio
 Code*. Unix, Linux, Mac OS or Windows should be usable as Operating System
 equally well.
 
-### Internet accesss
+### Internet access
 
 Just to mention it.
 
@@ -56,14 +56,14 @@ Even within *VS Code* you should know how to use a shell. The container offers
 
 ### Git
 
-You should know how to use *Git* on the commandline. While *VS Code* offers a
+You should know how to use *Git* on the command-line. While *VS Code* offers a
 graphical interface to *Git* it is difficult to really understand the usage
 without a fundamental background.
 
 ### Github account
 
-You should have registerd for a Github account to be able to fork your own
-instances of differnt parts of the tutorial. You should have registered your
+You should have registered for a Github account to be able to fork your own
+instances of different parts of the tutorial. You should have registered your
 local machine for your Github account, to easily push and pull from the command
 line.
 
@@ -78,7 +78,7 @@ Will depend upon the tutorial.
 
 ### Installation
 
-Begin by setting up the container as instructed by [the documenttion
+Begin by setting up the container as instructed by [the documentation
 here](https://developers.home-assistant.io/docs/development_environment). You
 actually have to visit the page and to use the given form, for to start up your
 container.
@@ -100,7 +100,7 @@ sharing the container.
 ![bootstrapping](img/bootstrapping.png)
 
 It gets a silly `NAME` assigned. In my case it is `blissful_gagarin`. You
-recoginize the container by the name of the `IMAGE`. It contains the name, which
+recognize the container by the name of the `IMAGE`. It contains the name, which
 you assigned to your fork on Github (here `ha.core2`). In the shell of your host
 machine assign a meaningful name.
 
@@ -114,7 +114,7 @@ Follow the instructions to start Home Assistant. Open the command palette of *VS
 Code*. Select `Tasks: Run Task`. Select `Run Home Assistant Core`. Follow along
 the start up log in the terminal window, to check if everything goes well.
 
-![deprecation warnig](img/deprecation-waring.png)
+![deprecation warning](img/deprecation-waring.png)
 
 You can ignore a warning regarding the version of Python. Home Assistant wants
 to support older versions to a certain extend. When time has come, the core team
@@ -122,7 +122,7 @@ will update the container.
 
 In your browser go ahead to [http://localhost:8123](http://localhost:8123) or
 whatever address your local machine set up to. Create an account for the
-adminstrator as usual.
+administrator as usual.
 
 ### Exploring the container
 
@@ -172,7 +172,7 @@ Explorer: Focus on Containers View`. Then right click the container and select
 It is not necessary to mount your projects into the development container, but
 you may want to do so. Without mounting them, you have to start up the container
 first to access them. That's fine as long as it is your default workflow and you
-push the code regulrarly into a repository outside of the container. You may
+push the code regularly into a repository outside of the container. You may
 want to mount the projects to be able to access them with the full tool chain of
 your desktop.
 
@@ -184,7 +184,7 @@ the mounting on a more fine-grained level.
 In a later tutorial we will show how to create cards and ship them as HACS
 repositories. HACS does install cards into `config/www/community`. Let's mount a
 development workspace for cards alongside, that is to `config/www/dev`. Add the
-`mounts` entry to the json array in `.devcointainer/devcontainer.json`. Replace
+`mounts` entry to the json array in `.devcontainer/devcontainer.json`. Replace
 `<WorkspaceOfCards>` with the full path to your local workspace of cards and
 `<YourRepoName>` with the matching directory name inside your container.
 
@@ -197,15 +197,17 @@ development workspace for cards alongside, that is to `config/www/dev`. Add the
 
 Rebuild the container with the command `Dev Containers: Rebuild Container`.
 
-Find the official documentation of the mount syntax [here](https://code.visualstudio.com/remote/advancedcontainers/add-local-file-mount).
+Find the official documentation of the mount syntax
+[here](https://code.visualstudio.com/remote/advancedcontainers/add-local-file-mount).
 
-You changed the `devcontainer.json` file and you can push the change to your personal git repositroy. That's one good reason to keep your own fork of it.
+You changed the `devcontainer.json` file and you can push the change to your
+personal git repository. That's one good reason to keep your own fork of it.
 
-#### Chanllenge
+#### Challenge
 
 This commit would get into your way, if you would like to create a pull request
 for the Home Assistant core. It doesn't matter for the tutorial, though. You can
-work around this by using differnt branches of your repository.
+work around this by using different branches of your repository.
 
 It would even be better, if you could mount directories without having to touch
 the official `devcontainer.json`. I don't know a solution so far. Maybe you can
