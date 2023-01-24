@@ -157,12 +157,12 @@ conflicts.
 ### Restarting the Container
 
 When closing the remote connection the shutdown of the container is triggered
-automatically. The remote connections also gets close when quitting VS Code.
+automatically. The remote connections also gets closed when quitting *VS Code*.
 
-To restart VS Code inside the container the shortcut is to select it from
-`File > Open Recent` in the menu. The regular approach is the command
-`Remote Explorer: Focus on Containers View`, right click on the container and
-select `Open Folder in Container`.
+To restart *VS Code* inside the container the shortcut is to select it from the
+menu with `File > Open Recent`. The default approach is the command `Remote
+Explorer: Focus on Containers View`. Then right click the container and select
+`Open Folder in Container`.
 
 ### Mounting
 
@@ -177,3 +177,33 @@ You may consider to mount the full `config/` directory. As you have already
 observed, it is not empty. If you want to mount it you have to take care to copy
 the files back into it. I choose a different approach for this tutorial and show
 the mounting on a more fine-grained level.
+
+In a later tutorial we will show how to create cards and ship them as HACS
+repositories. HACS does install cards into `config/www/community`. Let's mount a
+development workspace for cards alongside, that is to `config/www/dev`. Add the
+`mounts` entry to the json array in `.devcointainer/devcontainer.json`. Replace
+`<WorkspaceOfCards>` with the full path to your local workspace of cards and
+`<YourRepoName>` with the matching directory name inside your container.
+
+
+```json
+"mounts": [
+  "source=/<WorkspaceOfCards>,target=/workspaces/<YourRepoName>/config/www/dev,type=bind,consistency=cached"
+]
+```
+
+Rebuild the container with the command `Dev Containers: Rebuild Container`.
+
+Find the official documentation of the mount syntax [here](https://code.visualstudio.com/remote/advancedcontainers/add-local-file-mount).
+
+You changed the `devcontainer.json` file and you can push the change to your personal git repositroy. That's one good reason to keep your own fork of it.
+
+#### Chanllenge
+
+This commit would get into your way, if you would like to create a pull request
+for the Home Assistant core. It doesn't matter for the tutorial, though. You can
+work around this by using differnt branches of your repository.
+
+It would even be better, if you could mount directories without having to touch
+the official `devcontainer.json`. I don't know a solution so far. Maybe you can
+figure out one and contribute the solution.
