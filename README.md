@@ -1,5 +1,8 @@
 # Tutorial 01 - Home Assistant - The Develoment Environment
 
+* @published: January 2023
+* @author: Elmar Hinz
+
 This repository is the first one of a series of tutorials addressing differnt
 parts of the development with Home Assistant seen with the eye of the skilled
 user. Each tutorial is shipped as a standalone github repository holding the
