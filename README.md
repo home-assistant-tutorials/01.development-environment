@@ -181,17 +181,16 @@ observed, it is not empty. If you want to mount it you have to take care to copy
 the files back into it. I choose a different approach for this tutorial and show
 the mounting on a more fine-grained level.
 
-In a later tutorial we will show how to create cards and ship them as HACS
+In a future tutorial we will show how to create cards and ship them as HACS
 repositories. HACS does install cards into `config/www/community`. Let's mount a
-development workspace for cards alongside, that is to `config/www/dev`. Add the
-`mounts` entry to the json array in `.devcontainer/devcontainer.json`. Replace
-`<WorkspaceOfCards>` with the full path to your local workspace of cards and
-`<YourRepoName>` with the matching directory name inside your container.
-
+development workspace for tutorials alongside, that is to `config/www/tutor`.
+Add the `mounts` entry to the json array in `.devcontainer/devcontainer.json`.
+Replace `<WorkspaceOfCards>` with the full path to your local workspace of cards
+and `<YourRepoName>` with the matching directory name inside your container.
 
 ```json
 "mounts": [
-  "source=/<WorkspaceOfCards>,target=/workspaces/<YourRepoName>/config/www/dev,type=bind,consistency=cached"
+  "source=/<WorkspaceOfCards>,target=/workspaces/<YourRepoName>/config/www/tutor,type=bind,consistency=cached"
 ]
 ```
 
@@ -200,10 +199,21 @@ Rebuild the container with the command `Dev Containers: Rebuild Container`.
 Find the official documentation of the mount syntax
 [here](https://code.visualstudio.com/remote/advancedcontainers/add-local-file-mount).
 
-You changed the `devcontainer.json` file and you can push the change to your
-personal git repository. That's one good reason to keep your own fork of it.
+#### Trouble shouting
+
+Did you put the `mounts` entry into the top level of the array?
+
+Don't put it into `settings` or any other wrong location.
+
+Are the paths right?
+
+In doubt change into them and use `pwd` to spell out the full paths. Then use
+copy and paste to keep them untouched.
 
 #### Challenge
+
+You changed the `devcontainer.json` file and you can push the change to your
+personal git repository. That's one good reason to keep your own fork of it.
 
 This commit would get into your way, if you would like to create a pull request
 for the Home Assistant core. It doesn't matter for the tutorial, though. You can
