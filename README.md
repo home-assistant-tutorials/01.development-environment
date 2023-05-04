@@ -22,7 +22,7 @@ likely up-to-date. Let's address the downside of this approach, too. It is a
 large one. However, it is good to know the handling on the long run and you will
 be able reuse this container for most of the future tutorials.
 
-A dowwnside is, that this container is loading the latest developments of the core
+A downside is, that this container is loading the latest developments of the core
 and it happens, that is it is broken. This tutorial can't address the issues.
 In case refer to the [discord chat](https://discord.com/invite/home-assistant) to 
 follow the latest developments.
