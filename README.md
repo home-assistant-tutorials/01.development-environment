@@ -93,10 +93,6 @@ at the bottom of *VS Code* to follow along the process of the installation.
 In the dashboard of the *Docker Desktop* you can observe, how a bootstrapping
 container is setting up the development container. 
 
-_NOTE_: Please notice how the list of `known_hosts` is copied from `~/.ssh/`
-of the local machine into the container. Be aware of this privacy issue before
-sharing the container.
-
 ![bootstrapping](img/bootstrapping.png)
 
 It gets a silly `NAME` assigned. In my case it is `blissful_gagarin`. You
@@ -172,9 +168,10 @@ Explorer: Focus on Containers View`. Then right click the container and select
 It is not necessary to mount your projects into the development container, but
 you may want to do so. Without mounting them, you have to start up the container
 first to access them. That's fine as long as it is your default workflow and you
-push the code regularly into a repository outside of the container. You may
-want to mount the projects to be able to access them with the full tool chain of
-your desktop.
+push the code regularly into a repository outside of the container. In this case
+you have to configure the SSH settings of the container to connect to the repo.
+Here I describe how to mount directories instead, so that you can access the repo
+with the tools and setup of the host.
 
 You may consider to mount the full `config/` directory. As you have already
 observed, it is not empty. If you want to mount it you have to take care to copy
@@ -201,14 +198,11 @@ Find the official documentation of the mount syntax
 
 #### Trouble shouting
 
-Did you put the `mounts` entry into the top level of the array?
-
+Did you put the `mounts` entry into the top level of the array, as it should be?
 Don't put it into `settings` or any other wrong location.
 
-Are the paths right?
-
-In doubt change into them and use `pwd` to spell out the full paths. Then use
-copy and paste to keep them untouched.
+Are the paths right? In doubt change into them and use `pwd` to spell out the full paths. 
+Then use copy and paste to avoid typos.
 
 #### Challenge
 
