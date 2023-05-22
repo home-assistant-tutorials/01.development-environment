@@ -24,7 +24,7 @@ be able reuse this container for most of the future tutorials.
 
 A downside is that this container is loading the latest developments of the core
 and it happens that is it is broken. This tutorial can't address the issues.
-In case refer to the [discord chat](https://discord.com/invite/home-assistant) to 
+In case refer to the [discord chat](https://discord.com/invite/home-assistant) to
 follow the latest developments.
 
 ## Prerequisites
@@ -96,7 +96,7 @@ at the bottom of *VS Code* to follow along the process of the installation.
 ![log of setup](img/process-of-container-setup.png)
 
 In the dashboard of the *Docker Desktop* you can observe, how a bootstrapping
-container is setting up the development container. 
+container is setting up the development container.
 
 ![bootstrapping](img/bootstrapping.png)
 
@@ -138,7 +138,7 @@ Open the shell of your choice to explore the directory structure:
 
 ![exporing the container](img/exploring.png)
 
-In `/workspaces` you find the repository you have cloned. 
+In `/workspaces` you find the repository you have cloned.
 
 Change into it and type `ls -a` to also list the hidden files.
 
@@ -196,6 +196,14 @@ and `<YourRepoName>` with the matching directory name inside your container.
 ]
 ```
 
+**IMPORTANT HINT:**
+
+The directory `www` did belong to `root:root` when I tried this again. But Home
+Assistant is running as `vscode:vscode` and could not wirte to it. Aditionally
+I could not change it from within the shell of *vscode*. I could solve this
+by manually creating the `www/` directory before mounting. I guess there is
+a smarter solution than manually fixing this in advance.
+
 Rebuild the container with the command `Dev Containers: Rebuild Container`.
 
 Find the official documentation of the mount syntax
@@ -206,7 +214,7 @@ Find the official documentation of the mount syntax
 Did you put the `mounts` entry into the top level of the array, as it should be?
 Don't put it into `settings` or any other wrong location.
 
-Are the paths right? In doubt change into them and use `pwd` to spell out the full paths. 
+Are the paths right? In doubt change into them and use `pwd` to spell out the full paths.
 Then use copy and paste to avoid typos.
 
 #### Challenge
