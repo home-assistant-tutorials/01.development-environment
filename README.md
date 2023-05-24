@@ -136,7 +136,7 @@ Note how the *zsh* shell ships a lot of popular aliases by typing `alias` in it.
 
 Open the shell of your choice to explore the directory structure:
 
-![exporing the container](img/exploring.png)
+![exploring the container](img/exploring.png)
 
 In `/workspaces` you find the repository you have cloned.
 
@@ -199,7 +199,7 @@ and `<YourRepoName>` with the matching directory name inside your container.
 **IMPORTANT HINT:**
 
 The directory `www` did belong to `root:root` when I tried this again. But Home
-Assistant is running as `vscode:vscode` and could not wirte to it. Aditionally
+Assistant is running as `vscode:vscode` and could not write to it. Additionally
 I could not change it from within the shell of *vscode*. I could solve this
 by manually creating the `www/` directory before mounting. I guess there is
 a smarter solution than manually fixing this in advance.
